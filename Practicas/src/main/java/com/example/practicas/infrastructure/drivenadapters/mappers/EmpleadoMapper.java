@@ -1,6 +1,6 @@
 package com.example.practicas.infrastructure.drivenadapters.mappers;
 
-import com.example.practicas.infrastructure.entrypoints.dto.EmpleadoPersistenciaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.employeeservice.EmpleadoPersistenciaDTO;
 import com.example.practicas.domain.models.employeeservice.model.Empleado;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

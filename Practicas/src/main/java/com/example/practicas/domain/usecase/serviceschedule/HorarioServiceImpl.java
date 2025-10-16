@@ -1,7 +1,7 @@
 package com.example.practicas.domain.usecase.serviceschedule;
 
 import com.example.practicas.domain.models.serviceschedule.gateway.IHorarioService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IHorarioDao;
+import com.example.practicas.infrastructure.drivenadapters.dao.serviceschedule.adapter.IHorarioDao;
 import com.example.practicas.domain.models.serviceschedule.model.Horario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

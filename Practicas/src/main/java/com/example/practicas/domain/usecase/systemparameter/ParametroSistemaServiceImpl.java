@@ -1,7 +1,7 @@
 package com.example.practicas.domain.usecase.systemparameter;
 
 import com.example.practicas.domain.models.systemparameter.gateway.IParametroSistemaService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IParametroSistemaDao;
+import com.example.practicas.infrastructure.drivenadapters.dao.systemparameter.adapter.IParametroSistemaDao;
 import com.example.practicas.domain.models.systemparameter.model.ParametroSistema;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

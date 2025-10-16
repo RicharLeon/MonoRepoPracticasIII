@@ -1,7 +1,7 @@
 package com.example.practicas.domain.models.employeeservice.gateway;
 
-import com.example.practicas.infrastructure.entrypoints.dto.*;
 import com.example.practicas.domain.models.employeeservice.model.Empleado;
+import com.example.practicas.infrastructure.entrypoints.dto.employeeservice.*;
 
 import java.util.List;
 

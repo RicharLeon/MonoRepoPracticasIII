@@ -1,13 +1,13 @@
 package com.example.practicas.infrastructure.drivenadapters.mappers;
 
 import com.example.practicas.domain.models.employeeservice.model.Empleado;
-import com.example.practicas.infrastructure.entrypoints.dto.EmpleadoPersistenciaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.employeeservice.EmpleadoPersistenciaDTO;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-10-15T23:12:10-0500",
+    date = "2025-10-16T00:08:00-0500",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.3.1 (Oracle Corporation)"
 )
 @Component

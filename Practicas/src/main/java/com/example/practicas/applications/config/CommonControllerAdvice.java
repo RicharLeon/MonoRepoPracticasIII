@@ -4,7 +4,7 @@ import com.example.practicas.domain.models.shared.exceptions.CamposException;
 import com.example.practicas.domain.models.shared.exceptions.ErrorException;
 import com.example.practicas.domain.models.shared.exceptions.MyDataAccessException;
 import com.example.practicas.domain.models.shared.exceptions.NoContentException;
-import com.example.practicas.infrastructure.entrypoints.dto.RespuestaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.shared.RespuestaDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;

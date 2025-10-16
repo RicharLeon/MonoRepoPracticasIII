@@ -1,8 +1,8 @@
 package com.example.practicas.domain.usecase.servicereport;
 
 import com.example.practicas.domain.models.servicereport.gateway.IReporteService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IReporteDao;
-import com.example.practicas.infrastructure.entrypoints.dto.ReporteConsultaDTO;
+import com.example.practicas.infrastructure.drivenadapters.dao.servicereport.adapter.IReporteDao;
+import com.example.practicas.infrastructure.entrypoints.dto.servicereport.ReporteConsultaDTO;
 import com.example.practicas.domain.models.servicereport.model.Reporte;
 import com.example.practicas.infrastructure.helpers.utils.DateUtil;
 import com.example.practicas.infrastructure.helpers.utils.LocalDAteDataResource;

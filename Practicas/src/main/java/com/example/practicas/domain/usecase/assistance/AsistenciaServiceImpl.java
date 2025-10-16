@@ -1,7 +1,7 @@
 package com.example.practicas.domain.usecase.assistance;
 
 import com.example.practicas.domain.models.assistance.gateway.IAsistenciaService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IAsistenciaDao;
+import com.example.practicas.infrastructure.drivenadapters.dao.assistance.adapter.IAsistenciaDao;
 import com.example.practicas.domain.models.assistance.model.Asistencia;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
 package com.example.practicas.domain.usecase.groupmenu;
 
 import com.example.practicas.domain.models.groupmenu.gateway.IMenuGrupoService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IMenuGrupoDao;
-import com.example.practicas.infrastructure.entrypoints.dto.MenuConsultaDTO;
+import com.example.practicas.infrastructure.drivenadapters.dao.groupmenu.adapter.IMenuGrupoDao;
+import com.example.practicas.infrastructure.entrypoints.dto.groupmenu.MenuConsultaDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

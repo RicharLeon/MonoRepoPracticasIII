@@ -2,8 +2,8 @@ package com.example.practicas.domain.usecase.schedulechange;
 
 import com.example.practicas.domain.models.shared.exceptions.NoContentException;
 import com.example.practicas.domain.models.schedulechange.gateway.ICambioHorarioService;
-import com.example.practicas.infrastructure.drivenadapters.dao.ICambioHorarioDao;
-import com.example.practicas.infrastructure.entrypoints.dto.CambioHorarioConsultaDTO;
+import com.example.practicas.infrastructure.drivenadapters.dao.schedulechange.adapter.ICambioHorarioDao;
+import com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO;
 import com.example.practicas.domain.models.schedulechange.model.CambioHorario;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -2,8 +2,8 @@ package com.example.practicas.infrastructure.entrypoints.scheduler;
 
 import com.example.practicas.domain.models.shared.qrcodes.gateway.ICodigosQrService;
 import com.example.practicas.domain.models.employeeservice.gateway.IEmpleadoService;
-import com.example.practicas.infrastructure.drivenadapters.dao.ICodigosQrDao;
-import com.example.practicas.infrastructure.entrypoints.dto.EmpleadoConsultaDTO;
+import com.example.practicas.infrastructure.drivenadapters.dao.shared.qrcodes.adapter.ICodigosQrDao;
+import com.example.practicas.infrastructure.entrypoints.dto.employeeservice.EmpleadoConsultaDTO;
 import com.example.practicas.domain.models.shared.qrcodes.model.CodigosQr;
 import com.example.practicas.infrastructure.helpers.utils.GeneradorCodigosQr;
 import lombok.RequiredArgsConstructor;

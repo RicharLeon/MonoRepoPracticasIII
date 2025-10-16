@@ -1,11 +1,11 @@
 package com.example.practicas.domain.usecase.employeeservice;
 
 import com.example.practicas.domain.models.employeeservice.gateway.IEmpleadoService;
-import com.example.practicas.infrastructure.drivenadapters.dao.IEmpleadoDao;
+import com.example.practicas.infrastructure.drivenadapters.dao.employeeservice.adapter.IEmpleadoDao;
 import com.example.practicas.domain.models.employeeservice.model.Empleado;
 import com.example.practicas.domain.models.shared.exceptions.NoContentException;
-import com.example.practicas.infrastructure.entrypoints.dto.*;
 import com.example.practicas.infrastructure.drivenadapters.mappers.EmpleadoMapper;
+import com.example.practicas.infrastructure.entrypoints.dto.employeeservice.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

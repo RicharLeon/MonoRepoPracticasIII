@@ -1,6 +1,6 @@
 package com.example.practicas.infrastructure.helpers.utils;
 
-import com.example.practicas.infrastructure.entrypoints.dto.ReporteConsultaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.servicereport.ReporteConsultaDTO;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;

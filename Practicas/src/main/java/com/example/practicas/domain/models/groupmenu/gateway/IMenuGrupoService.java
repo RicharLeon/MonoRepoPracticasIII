@@ -1,6 +1,6 @@
 package com.example.practicas.domain.models.groupmenu.gateway;
 
-import com.example.practicas.infrastructure.entrypoints.dto.MenuConsultaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.groupmenu.MenuConsultaDTO;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.example.practicas.domain.models.servicereport.gateway;
 
-import com.example.practicas.infrastructure.entrypoints.dto.ReporteConsultaDTO;
+import com.example.practicas.infrastructure.entrypoints.dto.servicereport.ReporteConsultaDTO;
 import com.example.practicas.domain.models.servicereport.model.Reporte;
 
 import java.io.IOException;

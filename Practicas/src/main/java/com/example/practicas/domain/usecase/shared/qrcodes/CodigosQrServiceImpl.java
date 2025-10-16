@@ -2,9 +2,9 @@ package com.example.practicas.domain.usecase.shared.qrcodes;
 
 import com.example.practicas.domain.models.shared.exceptions.NoContentException;
 import com.example.practicas.domain.models.shared.qrcodes.gateway.ICodigosQrService;
-import com.example.practicas.infrastructure.drivenadapters.dao.ICodigosQrDao;
-import com.example.practicas.infrastructure.drivenadapters.dao.IEmpleadoDao;
-import com.example.practicas.infrastructure.entrypoints.dto.CodigosQrConsultaDTO;
+import com.example.practicas.infrastructure.drivenadapters.dao.shared.qrcodes.adapter.ICodigosQrDao;
+import com.example.practicas.infrastructure.drivenadapters.dao.employeeservice.adapter.IEmpleadoDao;
+import com.example.practicas.infrastructure.entrypoints.dto.shared.qrcodes.CodigosQrConsultaDTO;
 import com.example.practicas.domain.models.shared.qrcodes.model.CodigosQr;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
