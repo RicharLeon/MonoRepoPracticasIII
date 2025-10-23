@@ -9,14 +9,14 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ICodigosQrDao extends JpaRepository<CodigosQr, Long> {
-    @Query("select new com.example.practicas.models.dto.CodigosQrConsultaDTO(ie.idEmpleado, ie.nombre, c.cogigoQR, c.fecha, c.estado, c.cantidad_consumida) from CodigosQr c " +
+    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.shared.qrcodes.CodigosQrConsultaDTO(ie.idEmpleado, ie.nombre, c.cogigoQR, c.fecha, c.estado, c.cantidad_consumida) from CodigosQr c " +
             "inner join c.empleado ie " +
             "where ie.idEmpleado = ?1"
 
     )
     List<CodigosQrConsultaDTO> consultaQrEmpleado(Long id);
 
-    @Query("select new com.example.practicas.models.dto.CodigosQrConsultaDTO(ie.idEmpleado, ie.nombre, c.cogigoQR, c.fecha, c.estado, c.cantidad_consumida) from CodigosQr c " +
+    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.shared.qrcodes.CodigosQrConsultaDTO(ie.idEmpleado, ie.nombre, c.cogigoQR, c.fecha, c.estado, c.cantidad_consumida) from CodigosQr c " +
             "inner join c.empleado ie " +
             "where ie.idEmpleado = ?1 and c.estado = true "
 
