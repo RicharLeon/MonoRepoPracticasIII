@@ -10,7 +10,8 @@ import java.util.List;
 public interface IMenuGrupoDao extends JpaRepository<MenuGrupo, Long> {
     @Query("select new com.example.practicas.infrastructure.entrypoints.dto.groupmenu.MenuConsultaDTO(mo.idMenuOpcion, mo.nombreMenuOpcion, mo.descripcionMenuOpcion, mo.iconoMenuOpcion, mo.rutaMenuOpcion, mo.estadoMenuOpcion, mo.idPadreMenuOpcion, mo.ordenMenuOpcion, mo.claveMenuOpcion, mg.idMenuOpcion, mg.nombreMenuGrupo, mg.estadoMenuGrupo) from MenuGrupo mg " +
             "inner join mg.menuOpcion mo " +
-            "where mg.nombreMenuGrupo = ?1 "
+            "where mg.nombreMenuGrupo = ?1 " +
+            "and mg.estadoMenuGrupo != 'Inactivo' "
     )
     List<MenuConsultaDTO> findMenuByGrupo(String nombreGrupo);
 }

@@ -9,6 +9,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Setter
@@ -39,10 +40,10 @@ public class CambioHorario {
     private String descripcion;
 
     @Column(name = "FECHA_SOLICITUD")
-    private LocalDate fechaSolicitud;
+    private LocalDateTime fechaSolicitud;
 
     @Column(name = "ACEPTADO")
-    private boolean estado;
+    private Boolean estado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ID_EMPLEADO_SOLICITANTE", insertable = false, updatable = false)
@@ -61,7 +62,7 @@ public class CambioHorario {
 
     @PrePersist
     private void prePersist(){
-        this.fechaSolicitud = LocalDate.now();
+        this.fechaSolicitud = LocalDateTime.now();
     }
 
 

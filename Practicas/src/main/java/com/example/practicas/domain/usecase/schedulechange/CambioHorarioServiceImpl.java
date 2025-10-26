@@ -2,6 +2,8 @@ package com.example.practicas.domain.usecase.schedulechange;
 
 import com.example.practicas.domain.models.shared.exceptions.NoContentException;
 import com.example.practicas.domain.models.schedulechange.gateway.ICambioHorarioService;
+import com.example.practicas.domain.models.shared.values.Constantes;
+import com.example.practicas.infrastructure.drivenadapters.dao.employeeassistance.adapter.IEmployeeAssistanceDao;
 import com.example.practicas.infrastructure.drivenadapters.dao.schedulechange.adapter.ICambioHorarioDao;
 import com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO;
 import com.example.practicas.domain.models.schedulechange.model.CambioHorario;
@@ -13,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.data.domain.Pageable;
 
 import java.text.MessageFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -21,6 +25,7 @@ import java.util.Optional;
 public class CambioHorarioServiceImpl implements ICambioHorarioService {
 
     private final ICambioHorarioDao cambioHorarioDao;
+    private final IEmployeeAssistanceDao employeeAssistanceDao;
 
     @Override
     public Page<CambioHorarioConsultaDTO> findAll(@PageableDefault(page = 0, size=10) Pageable pageable) {
@@ -40,6 +45,7 @@ public class CambioHorarioServiceImpl implements ICambioHorarioService {
     @Transactional
     @Override
     public CambioHorario save(CambioHorario cambioHorario) {
+        validateAssitanceService(cambioHorario.getIdEmpleadoCambio(), cambioHorario);
         return cambioHorarioDao.save(cambioHorario);
     }
 
@@ -53,15 +59,36 @@ public class CambioHorarioServiceImpl implements ICambioHorarioService {
 
     @Override
     public CambioHorario update(CambioHorario cambioHorario, Long id) {
+        validateAssitanceServiceUpdate(cambioHorario.getIdEmpleadoCambio(), cambioHorario);
         CambioHorario cambioHorarioRecibido = cambioHorarioDao.findById(id)
                 .orElseThrow(()-> new NoContentException(MessageFormat
                         .format("Solicitud con id {0} a editar no existe", id)));
-        cambioHorarioRecibido.setEstado(cambioHorario.isEstado());
+        cambioHorarioRecibido.setEstado(cambioHorario.getEstado());
         cambioHorarioRecibido.setIdEmpleadoCambio(cambioHorario.getIdEmpleadoCambio());
         cambioHorarioRecibido.setIdEmpleadoAprobador(cambioHorario.getIdEmpleadoAprobador());
         cambioHorarioRecibido.setIdEmpleadoSolicitante(cambioHorario.getIdEmpleadoSolicitante());
         cambioHorarioRecibido.setDescripcion(cambioHorario.getDescripcion());
 
         return cambioHorarioDao.save(cambioHorarioRecibido);
+    }
+
+    public CambioHorario validateAssitanceService(Long idEmployeeChange, CambioHorario cambioHorario) {
+        var assitanceInSpecificDay = employeeAssistanceDao
+                .getEmployeeAssitanceInSpecificDay(cambioHorario.getDiaCambio(),
+                cambioHorario.getIdEmpleadoCambio());
+        if(assitanceInSpecificDay==null || assitanceInSpecificDay < Constantes.NUMBER_ONE) {
+            throw new NoContentException(String.format("EMPLEADO A CAMBIAR NO TIENE REGISTRO DE ASISTENCIA, EL DIA %s",
+                    cambioHorario.getDiaCambio()));
+        }
+        return cambioHorario;
+    }
+
+    public CambioHorario validateAssitanceServiceUpdate(Long idEmployeeChange, CambioHorario cambioHorario) {
+            if (cambioHorario.getEstado()){
+                employeeAssistanceDao.updateEmployeeChangeAssitance(idEmployeeChange,
+                        cambioHorario.getIdEmpleadoSolicitante());
+                return cambioHorario;
+            }
+            return cambioHorario;
     }
 }

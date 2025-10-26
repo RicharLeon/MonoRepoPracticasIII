@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -21,7 +22,7 @@ public class CambioHorarioConsultaDTO {
     private Long idEmpleadoCambio;
     private String nombreEmpleadoCambio;
 
-    private boolean estado;
+    private Boolean estado;
     private String descripcion;
-    private LocalDate fechaSolicitud;
+    private LocalDateTime fechaSolicitud;
 }
