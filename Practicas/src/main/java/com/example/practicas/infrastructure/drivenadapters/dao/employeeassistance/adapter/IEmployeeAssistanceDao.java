@@ -49,7 +49,7 @@ public interface IEmployeeAssistanceDao extends JpaRepository<EmployeeAssistance
                     "AND fecha_asistencia = :day ",
             nativeQuery = true)
     void updateEmployeeChangeAssitance(@Param("idEmployee") Long idEmployee,
-                                       @Param("newIdEmployee") Long newIdEmployee);
+                                       @Param("day") LocalDate day);
 
     List<EmployeeAssistance> findByIdEmpleado(Long idEmpleado);
 

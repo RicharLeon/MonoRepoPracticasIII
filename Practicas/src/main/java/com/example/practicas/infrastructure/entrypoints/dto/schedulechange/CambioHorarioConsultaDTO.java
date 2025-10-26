@@ -22,7 +22,9 @@ public class CambioHorarioConsultaDTO {
     private Long idEmpleadoCambio;
     private String nombreEmpleadoCambio;
 
+
     private Boolean estado;
     private String descripcion;
     private LocalDateTime fechaSolicitud;
+    private String diaCambio;
 }

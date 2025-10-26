@@ -84,9 +84,10 @@ public class CambioHorarioServiceImpl implements ICambioHorarioService {
     }
 
     public CambioHorario validateAssitanceServiceUpdate(Long idEmployeeChange, CambioHorario cambioHorario) {
+        var dayChange = LocalDate.parse(cambioHorario.getDiaCambio());
             if (cambioHorario.getEstado()){
                 employeeAssistanceDao.updateEmployeeChangeAssitance(idEmployeeChange,
-                        cambioHorario.getIdEmpleadoSolicitante());
+                        dayChange);
                 return cambioHorario;
             }
             return cambioHorario;

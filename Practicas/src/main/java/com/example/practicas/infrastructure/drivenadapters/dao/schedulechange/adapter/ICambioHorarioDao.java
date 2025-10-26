@@ -21,7 +21,7 @@ public interface ICambioHorarioDao extends JpaRepository<CambioHorario, Long> {
     List<CambioHorarioPersistenciaDTO> findCambiodeHorario();
 
     //este es el que hay que cambiar
-    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud) " +
+    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud, c.diaCambio) " +
             "from CambioHorario c " +
             "left join c.empleadoAprobador ea " +
             "left join c.empleadoCambio ec " +
@@ -30,7 +30,7 @@ public interface ICambioHorarioDao extends JpaRepository<CambioHorario, Long> {
     )
     Optional<CambioHorarioConsultaDTO> findCambiodeHorarioPorId(Long id);
 
-    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud) " +
+    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud, c.diaCambio) " +
             "from CambioHorario c " +
             "left join c.empleadoAprobador ea " +
             "left join c.empleadoCambio ec " +
@@ -38,7 +38,7 @@ public interface ICambioHorarioDao extends JpaRepository<CambioHorario, Long> {
             " order by c.fechaSolicitud desc")
     Page<CambioHorarioConsultaDTO> findCambiodeHorarioForNamesEmployee(Pageable pageable);
 
-    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud) " +
+    @Query("select new com.example.practicas.infrastructure.entrypoints.dto.schedulechange.CambioHorarioConsultaDTO(c.idCambioHorario, es.idEmpleado, es.nombre, ea.idEmpleado, ea.nombre, ec.idEmpleado, ec.nombre, c.estado, c.descripcion, c.fechaSolicitud, c.diaCambio) " +
             "from CambioHorario c " +
             "left join c.empleadoAprobador ea " +
             "left join c.empleadoCambio ec " +
